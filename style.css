@@ -1,0 +1,51 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+:root {
+  --bg: #ededed;
+  --text: #333;
+}
+@media screen and (xprefers-color-scheme: dark) {
+  :root {
+    --bg: #2e2f30;
+    --text: #f6f9ff;
+  }
+}
+body {
+  font-family: sans-serif;
+  color: var(--text, black);
+  line-height: 1.5;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: var(--bg, white);
+}
+button,
+select,
+textarea,
+input {
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--text);
+  padding: 1rem 1.5rem;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  background-color: var(--bg);
+  accent-color: var(--text);
+}
+.container {
+  padding: 2rem;
+}
