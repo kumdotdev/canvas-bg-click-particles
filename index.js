@@ -40,7 +40,7 @@ class Particle {
     this.opacity -= dt;
   }
   draw(ctx) {
-    ctx.fillStyle = getComputedStyle(canvas).getPropertyValue("--text");
+    ctx.fillStyle = getComputedStyle(canvas).getPropertyValue('--text');
     ctx.globalAlpha = this.opacity;
     ctx.fillRect(this.pos.x, this.pos.y, this.size.x, this.size.y);
   }
@@ -87,9 +87,13 @@ const resize = () => {
 const resizeObserver = new ResizeObserver(resize);
 resizeObserver.observe(document.documentElement);
 
-
 document.body.addEventListener('click', (event) => {
   const mouse = new Vector(event.clientX, event.clientY);
   animation.add(mouse);
-  umami.track('Click. Animation added to Button');
+  umami.track('Click. Animation added to Button', {
+    cat: 'answer',
+    item: 'Test dynamic event data item',
+    id: 123,
+    answered: Math.random() < 0.5,
+  });
 });
