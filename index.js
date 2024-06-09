@@ -91,4 +91,5 @@ resizeObserver.observe(document.documentElement);
 document.body.addEventListener('click', (event) => {
   const mouse = new Vector(event.clientX, event.clientY);
   animation.add(mouse);
+  umami.track('Click. Animation added to Button');
 });
